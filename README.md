@@ -1,25 +1,72 @@
-<h1 align="center">Todo React App  📝</h1>  
-<p align="center">
-  🖊️ A simple Todo App built using <a href="https://reactjs.org/">React</a> and <a href="https://mantine.dev/">Mantine UI</a>
-</p>
+# 🚀 GitHub Actions Workflow for Pull Requests – React Project
 
-## This is a super simple Todo App built using React.js and styled using Mantine UI.
+## 📌 Overview
+This repository contains a **GitHub Actions workflow** that automatically runs when a **pull request** is made to the following branches:  
+- `dev`  
+- `staging`  
+- `main`  
 
-You can view a live demo of the project here: https://javascriptbear.github.io/todo_react_app/
-Or, you can watch this video demo
+The workflow ensures that the project meets **code quality standards** and can be built successfully before merging.
 
-### **(Most likely outdated, its reccomeneded you check out the live demo!)**
+---
 
-https://user-images.githubusercontent.com/109053279/178185429-8de77574-cc2f-429f-8c4e-b1ed9f290894.mp4
+## ⚙️ Workflow Details
+### ✅ **Trigger**
+The workflow is triggered **on pull requests** targeting `dev`, `staging`, and `main`.
 
-## 😃 Features:
+### 🔄 **Steps in the Workflow**
+1. **Checkout Code** – Fetches the latest code from the pull request.  
+2. **Set Up Node.js** – Installs Node.js to run the React project.  
+3. **Install Dependencies** – Installs all required npm packages.  
+4. **Lint & Format Check** – Runs:  
+   - **ESLint** (`npm run lint`) – Ensures code follows best practices.  
+   - **Prettier** (`npm run format:check`) – Checks code formatting.  
+5. **Build the Project** – Runs `npm run build` to verify the project compiles successfully.  
 
-- ➕ Add todos
-- 🗑️ Delete todos
-- ⏸ Save todos to Local Storage when the state changes
-- ▶️ Load the todos from Local Storage when the site is loaded again
-- 🌙 Light \ dark mode toggle
+---
 
-<p align="center">
-  ❤️ Feel free to create issues and contributions for features or bugs to this project.
-</p>
+## 🛠️ How to Use This Repository  
+
+### 🔹 **1. Clone the Repository**  
+```bash
+git clone <repository-url>
+cd <your-project-name>
+```
+
+### 🔹 **2. Install Dependencies**  
+```bash
+npm install
+```
+
+### 🔹 **3. Run Linting and Formatting Locally** (Optional)  
+```bash
+npm run lint       # Run ESLint  
+npm run format     # Auto-format files  
+npm run format:check  # Check formatting without modifying files  
+```
+
+### 🔹 **4. Run the Build Locally**  
+```bash
+npm run build
+```
+
+---
+
+## 📂 Workflow File Location
+The GitHub Actions workflow file is stored in:  
+```
+.github/workflows/pull_request.yaml
+```
+
+---
+
+## 🔀 Branches in This Repository  
+- **`main`** – Production-ready branch.  
+- **`staging`** – Pre-release testing branch.  
+- **`dev`** – Development branch for feature testing.  
+
+---
+
+## 🔒 Security Considerations  
+✅ No sensitive information is hardcoded.  
+✅ Uses **GitHub Secrets** or environment variables if needed.  
