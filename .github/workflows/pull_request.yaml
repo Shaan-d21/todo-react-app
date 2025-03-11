@@ -1,10 +1,9 @@
-name: Integration
+name: Integration - stage
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
-
     branches: [ "main", "dev", "stagging"]
 
 jobs:
@@ -47,7 +46,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-   
 
     - name: Install Dependencies 
       run: npm ci
