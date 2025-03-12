@@ -76,7 +76,7 @@ jobs:
             owner: context.repo.owner,
             repo: context.repo.repo,
             issue_number: context.payload.pull_request?.number || 0,
-            body: "🚨 GitHub Actions workflow failed! Check logs: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            body: "GitHub Actions workflow failed! "
           });
 
   comment-on-pr:
@@ -90,4 +90,4 @@ jobs:
         curl -X POST -H "Authorization: token ${{ secrets.GH_PAT }}" \
         -H "Accept: application/vnd.github.v3+json" \
         https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments \
-        -d '{"body": "✅ GitHub Actions workflow succeeded! 🎉 Check it here: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"}'
+        -d '{"body": "GitHub Actions workflow succeeded!"}'
