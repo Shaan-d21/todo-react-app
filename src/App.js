@@ -134,7 +134,7 @@ export default function App() {
                   setOpened(false);
                 }}
               >
-                Create Task
+                Create Tasks
               </Button>
             </Group>
           </Modal>
